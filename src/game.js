@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Board from './board';
+import './game.css';
 
 function Game() {
   const [history, setHistory] = useState([{ squares: Array(9).fill(null) }]);
@@ -47,13 +48,13 @@ function Game() {
 
   return (
     <div className="game">
-      <div className="game-board">
+      <div className="game">
         <Board
           squares={current.squares}
           onClick={(i) => handleClick(i)}
         />
       </div>
-      <div className="game-info">
+      <div className="status">
         <div>{status}</div>
         <ol>{moves}</ol>
       </div>
